@@ -60,6 +60,7 @@ function getErrands() {
 }
 
 function setErrand(errandId) {
+    console.log(`Set errand to ${errandId}`);
     currentErrand = errandId;
     return;
 }
@@ -102,7 +103,7 @@ function loadTimer() {
         // hh:mm:ss
         hour    = Math.floor(diff / millisecondsInAnHour);
         min     = Math.floor((diff - hour) / millisecondsInAMinute);
-        sec     = Math.floor((diff - hour * millisecondsInAnHour - min * millisecondsInAMinute) / millisecondsInASecond);
+        sec     = Math.floor((diff - (hour * millisecondsInAnHour) - (min * millisecondsInAMinute)) / millisecondsInASecond);
         final   = `${hour} h ${min} m ${sec} s`;
     } else if (mode == 1) {
         // mm:ss
