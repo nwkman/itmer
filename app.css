@@ -39,7 +39,7 @@ html, body {
 
 #clock {
     font-family: 'Rubik';
-    font-size: 10rem;
+    font-size: 8rem;
     display: flex;
     justify-content: center;
     align-items: center;
