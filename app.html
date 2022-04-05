@@ -23,13 +23,14 @@
             </div>
         </div>
     </body>
-    <script src="app.js?version=20220405-5fix"></script>
+    <script src="app.js?version=20220405-6fix"></script>
     <script>
         // document.getElementsByTagName("body")[0].innerHTML += `<script src="app.js?dummytext=${(function() {const alphabet = "1234567890"; var ret = ""; for (var i = 0; i < 100; i++) {ret += alphabet[Math.floor(Math.random() * alphabet.length)]} return ret;})()}"><\/script>`
         // initialize all things.
         try {
             getQuotes();
             getErrands();
+            setTimeout(function() { quotes.innerHTML = quotesList[Math.floor(Math.random() * quotesList.length)].text; }, 1000);
             var updateInterval = setInterval(function() {
                 loadTimer();
             }, 1000);

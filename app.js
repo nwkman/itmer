@@ -31,7 +31,7 @@ function getQuotes() {
         .catch(function(err) {
             console.log(err);
         });
-        quotes.innerHTML = quotesList[Math.floor(Math.random() * quotesList.length)].text;
+
     return;
 }
 
