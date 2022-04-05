@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Inter|Rubik|Noto+Sans+SC|Noto+Sans+TC|Noto+Sans+JP|Noto+Sans+KR);
+
+html, body {
+    font-family: 'Inter', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans JP', 'Noto Sans KR';
+    margin: 0;
+    display: flex;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+.app {
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+}
+
+.center {
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.error {
+    font-size: 2em;
+}
+
+#clock {
+    font-family: 'Rubik';
+    font-size: 4em;
+}
