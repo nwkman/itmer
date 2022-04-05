@@ -121,6 +121,6 @@ function loadTimer() {
         final += " ago";
     }
     clock.innerHTML = final;
-    quotes.innerHTML = quotesList[Math.floor(Math.random() * quotesList.length)];
+    quotes.innerHTML = quotesList[Math.floor(Math.random() * quotesList.length)].text;
     return;
 }
