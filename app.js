@@ -123,18 +123,3 @@ function loadTimer() {
     clock.innerHTML = final;
     return;
 }
-
-// initialize all things.
-try {
-    getQuotes();
-    getErrands();
-    var updateInterval = setInterval(function() {
-        loadTimer();
-    }, 1000);
-    clock.addEventListener("click", function() {
-        toggleMode();
-        loadTimer();
-    });
-} catch (e) {
-    app.innerHTML = `<div class="center error">Sorry, this timer has been misconfigured. Please contact the owner of this website to fix it.<br>Error: ${e}</div>`;
-}

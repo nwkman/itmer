@@ -26,6 +26,20 @@
     <script src="app.js?version=20220405-4fix"></script>
     <script>
         // document.getElementsByTagName("body")[0].innerHTML += `<script src="app.js?dummytext=${(function() {const alphabet = "1234567890"; var ret = ""; for (var i = 0; i < 100; i++) {ret += alphabet[Math.floor(Math.random() * alphabet.length)]} return ret;})()}"><\/script>`
+        // initialize all things.
+        try {
+            getQuotes();
+            getErrands();
+            var updateInterval = setInterval(function() {
+                loadTimer();
+            }, 1000);
+            clock.addEventListener("click", function() {
+                toggleMode();
+                loadTimer();
+            });
+        } catch (e) {
+            app.innerHTML = `<div class="center error">Sorry, this timer has been misconfigured. Please contact the owner of this website to fix it.<br>Error: ${e}</div>`;
+        }
     </script>
     <link rel="stylesheet" href="accentColor.css">
     <link rel="stylesheet" href="app.css">
