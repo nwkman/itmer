@@ -119,6 +119,8 @@ function loadTimer() {
     }
     if (happened == -1) {
         final += "<br>ago";
+    } else {
+        final += "<br>later";
     }
     clock.innerHTML = final;
     return;
