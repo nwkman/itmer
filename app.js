@@ -14,7 +14,7 @@ const   millisecondsInAnHour    = 60 * 60 * 1000,
         millisecondsInASecond   = 1000;
 
 function toggleMode() {
-    mode = (++mode) % 4;
+    mode = (++mode) % 3;
     return;
 }
 
@@ -114,9 +114,6 @@ function loadTimer() {
         // ss
         sec     = Math.floor(diff / millisecondsInASecond);
         final   = `${sec} s`;
-    } else {
-        // ms
-        final = `${diff} ms`;
     }
     if (happened == -1) {
         final += " ago";
