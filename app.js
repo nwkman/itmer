@@ -31,6 +31,7 @@ function getQuotes() {
         .catch(function(err) {
             console.log(err);
         });
+        quotes.innerHTML = quotesList[Math.floor(Math.random() * quotesList.length)].text;
     return;
 }
 
@@ -97,6 +98,7 @@ function loadTimer() {
             happened = -1;
         }
     }
+    final += `${errandsList[currentErrand].title} happens on <br>`
     diff = happened * (errandParse - nowParse);
     var hour, min, sec;
     if (mode == 0) {
@@ -104,21 +106,20 @@ function loadTimer() {
         hour    = Math.floor(diff / millisecondsInAnHour);
         min     = Math.floor((diff - hour * millisecondsInAnHour) / millisecondsInAMinute);
         sec     = Math.floor((diff - (hour * millisecondsInAnHour) - (min * millisecondsInAMinute)) / millisecondsInASecond);
-        final   = `${hour} h ${min} m ${sec} s`;
+        final   += `${(hour < 10) ? ("0" + String(hour))} h ${(min < 10) ? ("0" + String(min)) : min} m ${sec} s`;
     } else if (mode == 1) {
         // mm:ss
         min     = Math.floor(diff / millisecondsInAMinute);
         sec     = Math.floor((diff - min * millisecondsInAMinute) / millisecondsInASecond);
-        final   = `${min} m ${sec} s`;
+        final   += `${(min < 10) ? ("0" + String(min)) : min} m ${(sec < 10) ? ("0" + String(sec) : sec)} s`;
     } else if (mode == 2) {
         // ss
         sec     = Math.floor(diff / millisecondsInASecond);
-        final   = `${sec} s`;
+        final   += `${sec} s`;
     }
     if (happened == -1) {
-        final += " ago";
+        final += "<br>ago";
     }
     clock.innerHTML = final;
-    quotes.innerHTML = quotesList[Math.floor(Math.random() * quotesList.length)].text;
     return;
 }
