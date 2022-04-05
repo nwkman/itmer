@@ -1,0 +1,22 @@
+{
+    "errands": [
+        {
+            "title": "Test - on - before",
+            "on": "Jan 28, 2006"
+        },
+        {
+            "title": "Test - on - after",
+            "on": "Jan 28, 2023"
+        },
+        {
+            "title": "Test - period - before",
+            "on": "Jan 1, 2022",
+            "period": 180
+        },
+        {
+            "title": "Test - period - after",
+            "on": "Jan 28, 2023",
+            "period": 365
+        }
+    ]
+}
