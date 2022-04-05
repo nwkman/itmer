@@ -111,7 +111,7 @@ function loadTimer() {
         // mm:ss
         min     = Math.floor(diff / millisecondsInAMinute);
         sec     = Math.floor((diff - min * millisecondsInAMinute) / millisecondsInASecond);
-        final   += `${(min < 10) ? ("0" + String(min)) : min} m ${(sec < 10) ? ("0" + String(sec) : sec)} s`;
+        final   += `${(min < 10) ? ("0" + String(min)) : min} m ${(sec < 10) ? ("0" + String(sec)) : sec} s`;
     } else if (mode == 2) {
         // ss
         sec     = Math.floor(diff / millisecondsInASecond);
