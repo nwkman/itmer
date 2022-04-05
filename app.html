@@ -30,25 +30,15 @@
         try {
             getQuotes();
             getErrands();
-            var updateInterval = setInterval(function() {
-                loadTimer();
-            }, 1000),
-                millisecUpdate = setInterval(function() {
-                loadTimer();
-            }, 1);
-            clearInterval(millisecUpdate);
-            clock.addEventListener("click", function() {
-                toggleMode();
-                if (mode == 3) {
-                    clearInterval(updateInterval);
-                    setInterval(millisecUpdate);
-                } else {
-                    clearInterval(millisecUpdate);
-                    setInterval(updateInterval);
-                }
-            });
         } catch (e) {
             app.innerHTML = `<div class="center error">Sorry, this timer has been misconfigured. Please contact the owner of this website to fix it.<br>Error: ${e}</div>`;
         }
+        loadTimer();
+        var updateInterval = setInterval(function() {
+            loadTimer();
+        }, 1000);
+        clock.addEventListener("click", function() {
+            toggleMode();
+        });
     </script>
 </html>
