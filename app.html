@@ -36,11 +36,13 @@
             clock.addEventListener("click", function() {
                 toggleMode();
                 if (mode == 3) {
+                    console.log("detected mode == 3!");
                     clearInterval(updateInterval);
                     updateInterval = setInterval(function() {
                         loadTimer();
                     }, 1);
                 } else {
+                    console.log(`detected mode == ${mode}!`);
                     clearInterval(updateInterval);
                     updateInterval = setInterval(function() {
                         loadTimer()
