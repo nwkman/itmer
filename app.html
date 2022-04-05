@@ -28,14 +28,15 @@
     <script>
         // initialize all things.
         try {
+            getQuotes();
             getErrands();
-            var updateTimeout = setTimeout(function() {
+            var updateTimeout = setInterval(function() {
                 loadTimer();
             }, 1000);
-            var checkMode = setTimeout(function() {
+            var checkMode = setInterval(function() {
                 if (mode == 3) {
-                    clearTimeout(updateTimeout);
-                    updateTimeout = setTimeout(function() {
+                    clearInterval(updateTimeout);
+                    updateTimeout = setInterval(function() {
                         loadTimer();
                     }, 1);
                 }
