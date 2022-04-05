@@ -118,7 +118,7 @@ function loadTimer() {
         // ms
         final = `${diff} ms`;
     }
-    if (happened) {
+    if (happened == -1) {
         final += " ago";
     }
     clock.innerHTML = final;
