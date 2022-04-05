@@ -30,12 +30,12 @@
         try {
             getQuotes();
             getErrands();
-            var updateTimeout = setInterval(function() {
+            var updateInterval = setInterval(function() {
                 loadTimer();
             }, 1000);
             var checkMode = setInterval(function() {
                 if (mode == 3) {
-                    clearInterval(updateTimeout);
+                    clearInterval(updateInterval);
                     updateTimeout = setInterval(function() {
                         loadTimer();
                     }, 1);
