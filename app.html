@@ -17,7 +17,7 @@
                 </div>
                 <div id="errands-selector">
                     <select id="which-errand" onchange="setErrand(this.value)">
-                        
+
                     </select>
                 </div>
             </div>
@@ -25,4 +25,26 @@
     </body>
     <script src="app.js"></script>
     <link rel="stylesheet" href="app.css">
+    <script>
+        // initialize all things.
+        try {
+            getErrands();
+            var updateTimeout = setTimeout(function() {
+                loadTimer();
+            }, 1000);
+            var checkMode = setTimeout(function() {
+                if (mode == 3) {
+                    clearTimeout(updateTimeout);
+                    updateTimeout = setTimeout(function() {
+                        loadTimer();
+                    }, 1);
+                }
+            });
+            clock.addEventListener("click", function() {
+                toggleMode();
+            });
+        } catch (e) {
+            app.innerHTML = `<div class="center error">Sorry, this timer has been misconfigured. Please contact the owner of this website to fix it.<br>Error: ${e}</div>`;
+        }
+    </script>
 </html>

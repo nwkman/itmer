@@ -8,14 +8,14 @@ An entry of errand may have the following properties:
 The title of the errand. A `title` property must be defined for every errand entry.
 ### `on` (`string`)
 The specific date of the errand in a form that can be parsed by Javascript such as `Jan 28, 2022`. An `on` property is required for every errand entry.
-### `every` (`string`)
-A value in the following format: `*year` (where * could be replaced with an integer, such as `1year`),
-`*month`, `*day`, `*hour`, `*minute`, `*second`. Must come with an `on` tag to define the start of the timing. Such as
+### `period` (`integer`)
+To make the `period` property work, an `on` property must be defined for this errand entry. This property is measured in days.
+The following example
 ```json
 {
-    "title": "My Birthday",
-    "on": "January 28, 2006",
-    "every": "1year"
+    "title": "Class over",
+    "on": "April 6, 2022",
+    "period": 7
 }
 ```
-will define an errand `My birthday` which first happened on January 28, 2006 and repeats every year.
+will define an errand `Class over` which firstly starts on April 6, 2022 and repeats every 7 days.
