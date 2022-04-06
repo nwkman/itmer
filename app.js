@@ -20,7 +20,7 @@ function toggleMode() {
 }
 
 async function getQuotes() {
-    fetch("quotes.json")
+    await fetch("quotes.json")
         .then((response) => {
             return response.json();
         })
@@ -39,7 +39,7 @@ async function getQuotes() {
 async function getErrands() {
     const requestUrl    = "errands.json";
     const request       = new Request(requestUrl);
-    fetch(request)
+    await fetch(request)
         .then((response) => {
             return response.json();
         })

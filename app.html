@@ -49,13 +49,9 @@
         appJs.src            = `app.js?dummy=${generateDummyText()}`;
         initJs.src           = `initialize.js?dummy=${generateDummyText()}`;
 
-        for (var k of [appJs, accColor, appCss]) {
+        for (var k of [appJs, accColor, appCss, initJs]) {
             document.getElementsByTagName("body")[0].appendChild(k);
         }
-
-        setTimeout(function() {
-            document.getElementsByTagName("body")[0].appendChild(initJs);
-        }, 500);
 
     </script>
 </html>
