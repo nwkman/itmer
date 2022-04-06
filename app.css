@@ -50,7 +50,7 @@ html, body {
 }
 
 #quotes {
-	font-family: 'Pacifico';
+	font-family: 'Pacifico', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans JP', 'Noto Sans KR';
 	font-size: 1.5rem;
 	display: flex;
 	justify-content: center;
