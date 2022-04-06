@@ -1,4 +1,6 @@
 # itmer
+## Demo
+Go to [here](https://nwkman.github.io/itmer/app.html).
 ## Used open-source projects
 [jQuery-Textfill](https://github.com/jquery-textfill/jquery-textfill), licensed under MIT License.
 ## Why this name?
