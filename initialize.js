@@ -28,6 +28,4 @@ async function init() {
     return;
 }
 
-(async function() {
-    await init();
-})();
+init();

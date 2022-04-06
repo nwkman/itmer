@@ -22,7 +22,8 @@ function toggleMode() {
 async function getQuotes() {
     await fetch("quotes.json")
         .then((response) => {
-            return response.json();
+            var ret = await response.json();
+            return ret;
         })
         .then((data) => {
             for (var k of data["quotes"]) {
