@@ -17,7 +17,32 @@ async function init() {
                 });
                 quotes.addEventListener("click", function() {
                     toggleQuote();
-                })
+                    renderMathInElement(document.body, {
+                        delimiters: [
+                            {
+                                left: '$$',
+                                right: '$$',
+                                display: true
+                            },
+                            {
+                                left: '$',
+                                right: '$',
+                                display: false
+                            },
+                            {
+                                left: '\\(',
+                                right: '\\)',
+                                display: false
+                            },
+                            {
+                                left: '\\[',
+                                right: '\\]',
+                                display: true
+                            }
+                        ],
+                        throwOnError: false;
+                    });
+                });
             })
             .catch(function(err) {
                 console.log(err);
