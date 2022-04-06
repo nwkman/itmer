@@ -3,7 +3,7 @@ async function init() {
     try {
         await getQuotes()
             .then(function() {
-                await getErrands();
+                getErrands();
             })
             .then(function() {
                 currentQuoteId = Math.floor(Math.random() * quotesList.length);
