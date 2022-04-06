@@ -40,7 +40,7 @@ async function init() {
                                 display: true
                             }
                         ],
-                        throwOnError: false;
+                        throwOnError: false
                     });
                 });
             })
