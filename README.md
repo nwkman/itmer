@@ -1,4 +1,6 @@
 # itmer
+## Used open-source projects
+[jQuery-Textfill](https://github.com/jquery-textfill/jquery-textfill), licensed under MIT License.
 ## Why this name?
 Try type "timer" quickly on your keyboard. Plus, this could be an interesting name of a project which is going to take part in a competition.
 ## How to configure?
@@ -19,3 +21,13 @@ The following example
 }
 ```
 will define an errand `Class over` which firstly starts on April 6, 2022 and repeats every 7 days.
+
+Users may also configure the quotes to be displayed in the file `quotes.json`. A `quote` entry has and only has **ONE** property: `text`.
+The following example
+```json
+{
+    "text": "A quick brown fox jumps over the lazy dog."
+}
+```
+will define a quote `A quick brown fox jumps over the lazy dog.`
+p.s. You may use math expressions here since KaTeX is enabled by default.

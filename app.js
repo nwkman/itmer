@@ -123,6 +123,8 @@ function loadTimer() {
         final += "<br>later</span>";
     }
     clock.innerHTML = final;
-    $("#clock").textfill();
+    $("#clock").textfill({
+        maxFontPixels: 128
+    });
     return;
 }
