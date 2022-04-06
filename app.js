@@ -14,13 +14,22 @@ const   millisecondsInAnHour    = 60 * 60 * 1000,
         millisecondsInAMinute   = 60 * 1000,
         millisecondsInASecond   = 1000;
 
+function generateDummyText() {
+    var alphabet     = "abcdefghijklmnopqrstuvwxyz-1234567890",
+        ret          = "";
+    for (var i = 0; i < 100; i++) {
+        ret += alphabet[Math.floor(Math.random() * alphabet.length)];
+    }
+    return ret;
+}
+
 function toggleMode() {
     mode = (++mode) % 3;
     return;
 }
 
 async function getQuotes() {
-    await fetch("quotes.json")
+    await fetch(`quotes.json?dummy=${generateDummyText()}`)
         .then((response) => {
             return response.json();
         })
@@ -37,7 +46,7 @@ async function getQuotes() {
 }
 
 async function getErrands() {
-    const requestUrl    = "errands.json";
+    const requestUrl    = `errands.json?dummy=${generateDummyText()}`;
     const request       = new Request(requestUrl);
     await fetch(request)
         .then((response) => {
