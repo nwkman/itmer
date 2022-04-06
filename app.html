@@ -40,41 +40,25 @@
 
         var appJs            = document.createElement("script"),
             accColor         = document.createElement("link"),
-            appCss           = document.createElement("link");
+            appCss           = document.createElement("link"),
+            initJs           = document.createElement("script");
         accColor.rel         = "stylesheet";
         appCss.rel           = "stylesheet";
         accColor.href        = `accentColor.css?dummy=${generateDummyText()}`;
         appCss.href          = `app.css?dummy=${generateDummyText()}`;
         appJs.src            = `app.js?dummy=${generateDummyText()}`;
+        initJs.src           = `initialize.js?dummy=${generateDummyText()}`;
 
-        for (var k of [appJs, accColor, appCss]) {
+        for (var k of [appJs, accColor, appCss, initJs]) {
             document.getElementsByTagName("body")[0].appendChild(k);
         }
+
+    </script>
+
+    <script>
+        init();
     </script>
     <!-- <script src="app.js?version=20220406-3fix"></script> -->
-    <script>
-        // initialize all things.
-        try {
-            getQuotes();
-            getErrands();
-            setTimeout(function() {
-                currentQuoteId = Math.floor(Math.random() * quotesList.length);
-                quotes.innerHTML = quotesList[currentQuoteId].text;
-            }, 1000);
-            var updateInterval = setInterval(function() {
-                loadTimer();
-            }, 1000);
-            clock.addEventListener("click", function() {
-                toggleMode();
-                loadTimer();
-            });
-            quotes.addEventListener("click", function() {
-                toggleQuote();
-            })
-        } catch (e) {
-            app.innerHTML = `<div class="center error">Sorry, this timer has been misconfigured. Please contact the owner of this website to fix it.<br>Error: ${e}</div>`;
-        }
-    </script>
     <!-- <link rel="stylesheet" href="accentColor.css"> -->
     <!-- <link rel="stylesheet" href="app.css?version=20220406-3fix"> -->
 </html>
