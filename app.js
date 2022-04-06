@@ -19,7 +19,7 @@ function toggleMode() {
     return;
 }
 
-function getQuotes() {
+async function getQuotes() {
     fetch("quotes.json")
         .then((response) => {
             return response.json();
@@ -36,7 +36,7 @@ function getQuotes() {
     return;
 }
 
-function getErrands() {
+async function getErrands() {
     const requestUrl    = "errands.json";
     const request       = new Request(requestUrl);
     fetch(request)
@@ -95,7 +95,7 @@ function loadTimer() {
     if (errandParse - nowParse < 0) {
         if (errandPeriod != null) {
             var modulo = (nowParse - errandParse) % conv(errandPeriod);
-            errandParse += Math.floor((nowParse - errandParse) / conv(errandPeriod));
+            errandParse += Math.floor((nowParse - errandParse) / conv(errandPeriod)) * conv(errandPeriod);
             if (modulo > 0) {
                 errandParse += conv(errandPeriod);
             }
