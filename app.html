@@ -28,7 +28,30 @@
             </div>
         </div>
     </body>
-    <script src="app.js?version=20220406-3fix"></script>
+    <script>
+        function generateDummyText() {
+            var alphabet     = "abcdefghijklmnopqrstuvwxyz-1234567890",
+                ret          = "";
+            for (var i = 0; i < 100; i++) {
+                ret += alphabet[Math.floor(Math.random() * alphabet.length)];
+            }
+            return ret;
+        }
+
+        var appJs            = document.createElement("script"),
+            accColor         = document.createElement("link"),
+            appCss           = document.createElement("link");
+        accColor.rel         = "stylesheet";
+        appCss.rel           = "stylesheet";
+        accColor.href        = `accentColor.css?dummy=${generateDummyText()}`;
+        appCss.href          = `app.css?dummy=${generateDummyText()}`;
+        appJs.src            = `app.js?dummy=${generateDummyText()}`;
+
+        for (var k of [appJs, accColor, appCss]) {
+            document.getElementsByTagName("body")[0].appendChild(k);
+        }
+    </script>
+    <!-- <script src="app.js?version=20220406-3fix"></script> -->
     <script>
         // initialize all things.
         try {
@@ -52,6 +75,6 @@
             app.innerHTML = `<div class="center error">Sorry, this timer has been misconfigured. Please contact the owner of this website to fix it.<br>Error: ${e}</div>`;
         }
     </script>
-    <link rel="stylesheet" href="accentColor.css">
-    <link rel="stylesheet" href="app.css?version=20220406-3fix">
+    <!-- <link rel="stylesheet" href="accentColor.css"> -->
+    <!-- <link rel="stylesheet" href="app.css?version=20220406-3fix"> -->
 </html>
