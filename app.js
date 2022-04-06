@@ -98,7 +98,7 @@ function loadTimer() {
             happened = -1;
         }
     }
-    final += `${errandsList[currentErrand].title} happens on <br>`
+    final += `<span>${errandsList[currentErrand].title} happens on <br>`
     diff = happened * (errandParse - nowParse);
     var hour, min, sec;
     if (mode == 0) {
@@ -120,8 +120,9 @@ function loadTimer() {
     if (happened == -1) {
         final += "<br>ago";
     } else {
-        final += "<br>later";
+        final += "<br>later</span>";
     }
     clock.innerHTML = final;
+    $("#clock").textfill();
     return;
 }
