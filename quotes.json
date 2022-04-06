@@ -2,6 +2,9 @@
     "quotes": [
         {
             "text": "A quick brown fox jumps over the lazy dog."
+        },
+        {
+            "text": "There was once a wise man said: <br> $\\text{In a quadratic equation } ax^2 + bx + c \\text{, there is always } x = \\frac {-b + \\sqrt{b^2 \\pm 4ac}} {2a}$ <br>."
         }
     ]
 }

@@ -34,7 +34,10 @@
         try {
             getQuotes();
             getErrands();
-            setTimeout(function() { quotes.innerHTML = quotesList[Math.floor(Math.random() * quotesList.length)].text; }, 1000);
+            setTimeout(function() {
+                currentQuoteId = Math.floor(Math.random() * quotesList.length);
+                quotes.innerHTML = quotesList[currentQuoteId].text;
+            }, 1000);
             var updateInterval = setInterval(function() {
                 loadTimer();
             }, 1000);
@@ -42,6 +45,9 @@
                 toggleMode();
                 loadTimer();
             });
+            quotes.addEventListener("click", function() {
+                toggleQuote();
+            })
         } catch (e) {
             app.innerHTML = `<div class="center error">Sorry, this timer has been misconfigured. Please contact the owner of this website to fix it.<br>Error: ${e}</div>`;
         }

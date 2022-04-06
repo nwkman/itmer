@@ -30,4 +30,5 @@ The following example
 }
 ```
 will define a quote `A quick brown fox jumps over the lazy dog.`
+
 p.s. You may use math expressions here since KaTeX is enabled by default.

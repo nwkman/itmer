@@ -5,6 +5,7 @@ var errandsSelector = document.getElementById("errands-selector"),
     whichErrand     = document.getElementById("which-errand"),
     mode            = 0,
     currentErrand   = 0,
+    currentQuoteId  = 0,
     errandsList     = [],
     quotesList      = [];
 
@@ -70,6 +71,10 @@ function conv(number) {
     return number * 86400000;
 }
 
+function toggleQuote() {
+    currentQuoteId = (++currentQuoteId) % quotesList.length;
+    quotes.innerHTML = quotesList[currentQuoteId].text;
+}
 
 function loadTimer() {
     var errandOn, errandPeriod, happened = 1, final = "";
